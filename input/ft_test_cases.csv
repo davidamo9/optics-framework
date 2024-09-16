@@ -1,0 +1,14 @@
+test_case,test_step
+TC 033 Fund Transfer Using IMPS Within ICICI Bank,Launch ICICI Application
+TC 033 Fund Transfer Using IMPS Within ICICI Bank,Authenticate User Using Login Pin
+TC 033 Fund Transfer Using IMPS Within ICICI Bank,Navigate to Dashboard Screen
+TC 033 Fund Transfer Using IMPS Within ICICI Bank,Navigate to Send Money Screen
+TC 033 Fund Transfer Using IMPS Within ICICI Bank,Navigate to Select Payee Screen
+TC 033 Fund Transfer Using IMPS Within ICICI Bank,Navigate to Fund Transfer Screen
+TC 033 Fund Transfer Using IMPS Within ICICI Bank,Validation Enter Amount Less Then 1 Rupees
+TC 033 Fund Transfer Using IMPS Within ICICI Bank,Validation Enter Amount More Than Available Balance
+TC 033 Fund Transfer Using IMPS Within ICICI Bank,Enter Amount Valid Amount On Transfer Fund Screen
+TC 033 Fund Transfer Using IMPS Within ICICI Bank,Navigate to Confirm Details Screen
+TC 033 Fund Transfer Using IMPS Within ICICI Bank,Navigate to Payment Successful Screen
+
+

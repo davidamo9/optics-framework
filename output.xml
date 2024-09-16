@@ -1,0 +1,387 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.1 (Python 3.12.5 on darwin)" generated="2024-09-13T11:23:30.895719" rpa="false" schemaversion="5">
+<suite id="s1" name="Framework Test Cases" source="/Users/lalitanand/Desktop/icici-scripts-optics-framework/TestSuite/Framework/framework_test_cases.robot">
+<test id="s1-t1" name="Test Keywords" line="9">
+<kw name="Launch Application" owner="appium">
+<kw name="Open Appium Session" owner="appium">
+<kw name="Open Application" owner="AppiumLibrary">
+<arg>${APPIUM_SERVER_URL}</arg>
+<arg>platformName=${PLATFORM_NAME}</arg>
+<arg>platformVersion=${PLATFORM_VERSION}</arg>
+<arg>udid=${DEVICE_SERIAL}</arg>
+<arg>appActivity=${APP_ACTIVITY}</arg>
+<arg>appPackage=${APP_PACKAGE}</arg>
+<arg>automationName=UiAutomator2</arg>
+<arg>newCommandTimeout=60000</arg>
+<arg>usePrebuiltWDA=true</arg>
+<arg>useNewWDA=false</arg>
+<arg>autoGrantPermissions=true</arg>
+<arg>autoAcceptAlerts=true</arg>
+<arg>noReset=true</arg>
+<arg>appium:ignoreHiddenApiPolicyError=true</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://appium.io/docs/en/2.1/cli/args/
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |
+| strict_ssl          | No     | allows you to send commands to an invalid certificate host like a self-signed one. |</doc>
+<status status="PASS" start="2024-09-13T11:23:31.496326" elapsed="6.714331"/>
+</kw>
+<status status="PASS" start="2024-09-13T11:23:31.495314" elapsed="6.715606"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-09-13T11:23:43.211813" level="INFO">Slept 5 seconds.</msg>
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-09-13T11:23:38.211209" elapsed="5.000785"/>
+</kw>
+<kw name="Capture Screenshot With Timestamp" owner="AppiumHelper">
+<msg time="2024-09-13T11:23:43.871401" level="INFO">Screenshot saved as: 2024-09-13T11-23-43-212637-session-started.png</msg>
+<arg>session-started</arg>
+<doc>Capture a screenshot with a timestamp and save it using the given base name.</doc>
+<status status="PASS" start="2024-09-13T11:23:43.212349" elapsed="0.659285"/>
+</kw>
+<status status="PASS" start="2024-09-13T11:23:31.494810" elapsed="12.377064"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<msg time="2024-09-13T11:23:43.872488" level="INFO">@{elements} = [ Full test ]</msg>
+<var>@{elements}</var>
+<arg>Full test</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2024-09-13T11:23:43.872161" elapsed="0.000377"/>
+</kw>
+<kw name="Wait Until Elements Are Visible" owner="appium">
+<for flavor="IN">
+<iter>
+<kw name="Wait Until Page Contains" owner="AppiumLibrary">
+<arg>${element_text}</arg>
+<arg>${timeout}</arg>
+<doc>Waits until `text` appears on current page.</doc>
+<status status="PASS" start="2024-09-13T11:23:43.873891" elapsed="14.835652"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-09-13T11:23:58.710163" level="INFO">Element with text "Full test" is visible</msg>
+<arg>Element with text "${element_text}" is visible</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-09-13T11:23:58.709835" elapsed="0.000412"/>
+</kw>
+<var name="${element_text}">Full test</var>
+<status status="PASS" start="2024-09-13T11:23:43.873704" elapsed="14.836643"/>
+</iter>
+<var>${element_text}</var>
+<value>@{elements_texts}</value>
+<status status="PASS" start="2024-09-13T11:23:43.873437" elapsed="14.837023"/>
+</for>
+<kw name="Capture And Annotate Multiple Elements" owner="AppiumHelper">
+<msg time="2024-09-13T11:23:59.536083" level="INFO">page_source
+&lt;?xml version='1.0' encoding='UTF-8' standalone='yes' ?&gt;
+&lt;hierarchy index="0" class="hierarchy" rotation="0" width="1080" height="2148"&gt;
+  &lt;android.widget.FrameLayout index="0" package="com.agence3pp" class="android.widget.FrameLayout" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,0][1080,2148]" displayed="true"&gt;
+    &lt;android.widget.LinearLayout index="0" package="com.agence3pp" class="android.widget.LinearLayout" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,0][1080,2148]" displayed="true"&gt;
+      &lt;android.widget.FrameLayout index="0" package="com.agence3pp" class="android.widget.FrameLayout" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,103][1080,2148]" displayed="true"&gt;
+        &lt;android.widget.LinearLayout index="0" package="com.agence3pp" class="android.widget.LinearLayout" text="" resource-id="com.agence3pp:id/action_bar_root" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,103][1080,2148]" displayed="true"&gt;
+          &lt;android.widget.FrameLayout index="0" package="com.agence3pp" class="android.widget.FrameLayout" text="" resource-id="android:id/content" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,103][1080,2148]" displayed="true"&gt;
+            &lt;android.view.ViewGroup index="0" package="com.agence3pp" class="android.view.ViewGroup" text="" resource-id="com.agence3pp:id/container" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,103][1080,2148]" displayed="true"&gt;
+              &lt;android.widget.LinearLayout index="0" package="com.agence3pp" class="android.widget.LinearLayout" text="" resource-id="com.agence3pp:id/activity_bottom_home_toolbar" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,103][1080,292]" displayed="true"&gt;
+                &lt;android.view.ViewGroup index="0" package="com.agence3pp" class="android.view.ViewGroup" text="" resource-id="com.agence3pp:id/inc_toolbar_with_center_logo_toolbar" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,103][1080,292]" displayed="true"&gt;
+                  &lt;android.widget.ImageView index="0" package="com.agence3pp" class="android.widget.ImageView" text="" content-desc="Logo" resource-id="com.agence3pp:id/inc_toolbar_with_center_logo_image" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[301,131][780,263]" displayed="true" /&gt;
+                &lt;/android.view.ViewGroup&gt;
+              &lt;/android.widget.LinearLayout&gt;
+              &lt;android.widget.FrameLayout index="1" package="com.agence3pp" class="android.widget.FrameLayout" text="" resource-id="com.agence3pp:id/id_home_navigation_content" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,292][1080,2062]" displayed="true"&gt;
+                &lt;android.view.ViewGroup index="0" package="com.agence3pp" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,292][1080,2062]" displayed="true"&gt;
+                  &lt;android.widget.FrameLayout index="0" package="com.agence3pp" class="android.widget.FrameLayout" text="" resource-id="com.agence3pp:id/id_google_map_container" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,292][1080,2062]" displayed="true"&gt;
+                    &lt;android.widget.FrameLayout index="0" package="com.agence3pp" class="android.widget.FrameLayout" text="" checkable="false" checked="false" clickable="true" enabled="true" focusable="true" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,292][1080,2062]" displayed="true"&gt;
+                      &lt;android.widget.FrameLayout index="0" package="com.agence3pp" class="android.widget.FrameLayout" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,292][1080,2062]" displayed="true"&gt;
+                        &lt;android.view.View index="0" package="com.agence3pp" class="android.view.View" text="" content-desc="Google Map" checkable="false" checked="false" clickable="true" enabled="true" focusable="true" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,292][1080,2062]" displayed="true"&gt;
+                          &lt;android.view.View index="0" package="com.agence3pp" class="android.view.View" text="" content-desc="Map Marker" checkable="false" checked="false" clickable="false" enabled="true" focusable="true" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[491,1042][589,1177]" displayed="true" /&gt;
+                        &lt;/android.view.View&gt;
+                        &lt;android.widget.RelativeLayout index="1" package="com.agence3pp" class="android.widget.RelativeLayout" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,292][1080,2062]" displayed="true" /&gt;
+                        &lt;android.widget.RelativeLayout index="2" package="com.agence3pp" class="android.widget.RelativeLayout" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,292][1080,2062]" displayed="true"&gt;
+                          &lt;android.widget.ImageView index="0" package="com.agence3pp" class="android.widget.ImageView" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[17,1971][220,2045]" displayed="true" /&gt;
+                        &lt;/android.widget.RelativeLayout&gt;
+                      &lt;/android.widget.FrameLayout&gt;
+                    &lt;/android.widget.FrameLayout&gt;
+                  &lt;/android.widget.FrameLayout&gt;
+                  &lt;android.widget.RelativeLayout index="1" package="com.agence3pp" class="android.widget.RelativeLayout" text="" resource-id="com.agence3pp:id/container_radio_group" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,292][1080,614]" displayed="true"&gt;
+                    &lt;android.widget.RadioGroup index="0" package="com.agence3pp" class="android.widget.RadioGroup" text="" resource-id="com.agence3pp:id/test_buttons_layout_with_reminder" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[34,326][1046,580]" displayed="true"&gt;
+                      &lt;android.widget.RadioButton index="0" package="com.agence3pp" class="android.widget.RadioButton" text="Full test" resource-id="com.agence3pp:id/id_test_scenario_full" checkable="true" checked="true" clickable="true" enabled="true" focusable="true" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[34,326][284,580]" displayed="true" /&gt;
+                      &lt;android.widget.RadioButton index="1" package="com.agence3pp" class="android.widget.RadioButton" text="Speed test" resource-id="com.agence3pp:id/id_test_scenario_speed" checkable="true" checked="false" clickable="true" enabled="true" focusable="true" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[287,326][538,580]" displayed="true" /&gt;
+                      &lt;android.widget.RadioButton index="2" package="com.agence3pp" class="android.widget.RadioButton" text="Drive test" resource-id="com.agence3pp:id/id_test_scenario_drive" checkable="true" checked="false" clickable="true" enabled="true" focusable="true" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[541,326][792,580]" displayed="true" /&gt;
+                      &lt;android.widget.RadioButton index="3" package="com.agence3pp" class="android.widget.RadioButton" text="Test reminder" resource-id="com.agence3pp:id/id_test_reminder" checkable="true" checked="false" clickable="true" enabled="true" focusable="true" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[795,326][1046,580]" displayed="true" /&gt;
+                    &lt;/android.widget.RadioGroup&gt;
+                  &lt;/android.widget.RelativeLayout&gt;
+                  &lt;android.widget.ImageButton index="2" package="com.agence3pp" class="android.widget.ImageButton" text="" content-desc="Here's an image or an icon" resource-id="com.agence3pp:id/id_launch_test_btn" checkable="false" checked="false" clickable="true" enabled="true" focusable="true" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[176,1584][905,2044]" displayed="true" /&gt;
+                  &lt;android.widget.ImageView index="3" package="com.agence3pp" class="android.widget.ImageView" text="" content-desc="Here's an image or an icon" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[270,1584][811,2044]" displayed="true" /&gt;
+                  &lt;android.widget.TextView index="4" package="com.agence3pp" class="android.widget.TextView" text="TEST" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[478,1780][602,1848]" displayed="true" /&gt;
+                &lt;/android.view.ViewGroup&gt;
+              &lt;/android.widget.FrameLayout&gt;
+              &lt;android.widget.FrameLayout index="2" package="com.agence3pp" class="android.widget.FrameLayout" text="" resource-id="com.agence3pp:id/id_home_bottom_navigation" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,2062][1080,2148]" displayed="true"&gt;
+                &lt;android.view.ViewGroup index="0" package="com.agence3pp" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,2062][1080,2148]" displayed="true"&gt;
+                  &lt;android.widget.FrameLayout index="0" package="com.agence3pp" class="android.widget.FrameLayout" text="" resource-id="com.agence3pp:id/navigation_1" checkable="false" checked="false" clickable="true" enabled="true" focusable="true" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,2062][216,2148]" displayed="true"&gt;
+                    &lt;android.widget.ImageView index="0" package="com.agence3pp" class="android.widget.ImageView" text="" resource-id="com.agence3pp:id/icon" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[67,2116][148,2148]" displayed="true" /&gt;
+                  &lt;/android.widget.FrameLayout&gt;
+                  &lt;android.widget.FrameLayout index="1" package="com.agence3pp" class="android.widget.FrameLayout" text="" resource-id="com.agence3pp:id/navigation_2" checkable="false" checked="false" clickable="true" enabled="true" focusable="true" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[216,2062][432,2148]" displayed="true"&gt;
+                    &lt;android.widget.ImageView index="0" package="com.agence3pp" class="android.widget.ImageView" text="" resource-id="com.agence3pp:id/icon" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[283,2116][364,2148]" displayed="true" /&gt;
+                  &lt;/android.widget.FrameLayout&gt;
+                  &lt;android.widget.FrameLayout index="2" package="com.agence3pp" class="android.widget.FrameLayout" text="" resource-id="com.agence3pp:id/navigation_3" checkable="false" checked="false" clickable="false" enabled="true" focusable="true" focused="false" long-clickable="false" password="false" scrollable="false" selected="true" bounds="[432,2062][648,2148]" displayed="true"&gt;
+                    &lt;android.widget.ImageView index="0" package="com.agence3pp" class="android.widget.ImageView" text="" resource-id="com.agence3pp:id/icon" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="true" bounds="[499,2116][580,2148]" displayed="true" /&gt;
+                  &lt;/android.widget.FrameLayout&gt;
+                  &lt;android.widget.FrameLayout index="3" package="com.agence3pp" class="android.widget.FrameLayout" text="" resource-id="com.agence3pp:id/navigation_4" checkable="false" checked="false" clickable="true" enabled="true" focusable="true" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[648,2062][864,2148]" displayed="true"&gt;
+                    &lt;android.widget.ImageView index="0" package="com.agence3pp" class="android.widget.ImageView" text="" resource-id="com.agence3pp:id/icon" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[715,2116][796,2148]" displayed="true" /&gt;
+                  &lt;/android.widget.FrameLayout&gt;
+                  &lt;android.widget.FrameLayout index="4" package="com.agence3pp" class="android.widget.FrameLayout" text="" resource-id="com.agence3pp:id/navigation_5" checkable="false" checked="false" clickable="true" enabled="true" focusable="true" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[864,2062][1080,2148]" displayed="true"&gt;
+                    &lt;android.widget.ImageView index="0" package="com.agence3pp" class="android.widget.ImageView" text="" resource-id="com.agence3pp:id/icon" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[931,2116][1012,2148]" displayed="true" /&gt;
+                  &lt;/android.widget.FrameLayout&gt;
+                &lt;/android.view.ViewGroup&gt;
+              &lt;/android.widget.FrameLayout&gt;
+            &lt;/android.view.ViewGroup&gt;
+          &lt;/android.widget.FrameLayout&gt;
+        &lt;/android.widget.LinearLayout&gt;
+      &lt;/android.widget.FrameLayout&gt;
+    &lt;/android.widget.LinearLayout&gt;
+  &lt;/android.widget.FrameLayout&gt;
+&lt;/hierarchy&gt;
+tree
+&lt;Element hierarchy at 0x10f3a6440&gt;
+element
+[&lt;Element android.widget.RadioButton at 0x10f37f5c0&gt;]
+Element with text 'Full test' annotated.
+All elements were found and annotated. Screenshot saved at 2024-09-13T11-23-58-711044-5gmark-landing.png</msg>
+<arg>${elements_texts}</arg>
+<arg>${screenshot_name}</arg>
+<doc>Capture a screenshot and annotate the areas around the elements with the given texts.</doc>
+<status status="PASS" start="2024-09-13T11:23:58.710686" elapsed="0.825915"/>
+</kw>
+<arg>@{elements}</arg>
+<arg>screenshot_name=5gmark-landing.png</arg>
+<status status="PASS" start="2024-09-13T11:23:43.872887" elapsed="15.663895"/>
+</kw>
+<kw name="Press Element" owner="appium">
+<kw name="Get Element Attributes By Text" owner="AppiumHelper">
+<msg time="2024-09-13T11:24:00.605593" level="INFO">page_source
+&lt;?xml version='1.0' encoding='UTF-8' standalone='yes' ?&gt;
+&lt;hierarchy index="0" class="hierarchy" rotation="0" width="1080" height="2148"&gt;
+  &lt;android.widget.FrameLayout index="0" package="com.agence3pp" class="android.widget.FrameLayout" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,0][1080,2148]" displayed="true"&gt;
+    &lt;android.widget.LinearLayout index="0" package="com.agence3pp" class="android.widget.LinearLayout" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,0][1080,2148]" displayed="true"&gt;
+      &lt;android.widget.FrameLayout index="0" package="com.agence3pp" class="android.widget.FrameLayout" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,103][1080,2148]" displayed="true"&gt;
+        &lt;android.widget.LinearLayout index="0" package="com.agence3pp" class="android.widget.LinearLayout" text="" resource-id="com.agence3pp:id/action_bar_root" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,103][1080,2148]" displayed="true"&gt;
+          &lt;android.widget.FrameLayout index="0" package="com.agence3pp" class="android.widget.FrameLayout" text="" resource-id="android:id/content" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,103][1080,2148]" displayed="true"&gt;
+            &lt;android.view.ViewGroup index="0" package="com.agence3pp" class="android.view.ViewGroup" text="" resource-id="com.agence3pp:id/container" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,103][1080,2148]" displayed="true"&gt;
+              &lt;android.widget.LinearLayout index="0" package="com.agence3pp" class="android.widget.LinearLayout" text="" resource-id="com.agence3pp:id/activity_bottom_home_toolbar" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,103][1080,292]" displayed="true"&gt;
+                &lt;android.view.ViewGroup index="0" package="com.agence3pp" class="android.view.ViewGroup" text="" resource-id="com.agence3pp:id/inc_toolbar_with_center_logo_toolbar" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,103][1080,292]" displayed="true"&gt;
+                  &lt;android.widget.ImageView index="0" package="com.agence3pp" class="android.widget.ImageView" text="" content-desc="Logo" resource-id="com.agence3pp:id/inc_toolbar_with_center_logo_image" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[301,131][780,263]" displayed="true" /&gt;
+                &lt;/android.view.ViewGroup&gt;
+              &lt;/android.widget.LinearLayout&gt;
+              &lt;android.widget.FrameLayout index="1" package="com.agence3pp" class="android.widget.FrameLayout" text="" resource-id="com.agence3pp:id/id_home_navigation_content" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,292][1080,2062]" displayed="true"&gt;
+                &lt;android.view.ViewGroup index="0" package="com.agence3pp" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,292][1080,2062]" displayed="true"&gt;
+                  &lt;android.widget.FrameLayout index="0" package="com.agence3pp" class="android.widget.FrameLayout" text="" resource-id="com.agence3pp:id/id_google_map_container" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,292][1080,2062]" displayed="true"&gt;
+                    &lt;android.widget.FrameLayout index="0" package="com.agence3pp" class="android.widget.FrameLayout" text="" checkable="false" checked="false" clickable="true" enabled="true" focusable="true" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,292][1080,2062]" displayed="true"&gt;
+                      &lt;android.widget.FrameLayout index="0" package="com.agence3pp" class="android.widget.FrameLayout" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,292][1080,2062]" displayed="true"&gt;
+                        &lt;android.view.View index="0" package="com.agence3pp" class="android.view.View" text="" content-desc="Google Map" checkable="false" checked="false" clickable="true" enabled="true" focusable="true" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,292][1080,2062]" displayed="true"&gt;
+                          &lt;android.view.View index="0" package="com.agence3pp" class="android.view.View" text="" content-desc="Map Marker" checkable="false" checked="false" clickable="false" enabled="true" focusable="true" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[491,1042][589,1177]" displayed="true" /&gt;
+                        &lt;/android.view.View&gt;
+                        &lt;android.widget.RelativeLayout index="1" package="com.agence3pp" class="android.widget.RelativeLayout" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,292][1080,2062]" displayed="true" /&gt;
+                        &lt;android.widget.RelativeLayout index="2" package="com.agence3pp" class="android.widget.RelativeLayout" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,292][1080,2062]" displayed="true"&gt;
+                          &lt;android.widget.ImageView index="0" package="com.agence3pp" class="android.widget.ImageView" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[17,1971][220,2045]" displayed="true" /&gt;
+                        &lt;/android.widget.RelativeLayout&gt;
+                      &lt;/android.widget.FrameLayout&gt;
+                    &lt;/android.widget.FrameLayout&gt;
+                  &lt;/android.widget.FrameLayout&gt;
+                  &lt;android.widget.RelativeLayout index="1" package="com.agence3pp" class="android.widget.RelativeLayout" text="" resource-id="com.agence3pp:id/container_radio_group" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,292][1080,614]" displayed="true"&gt;
+                    &lt;android.widget.RadioGroup index="0" package="com.agence3pp" class="android.widget.RadioGroup" text="" resource-id="com.agence3pp:id/test_buttons_layout_with_reminder" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[34,326][1046,580]" displayed="true"&gt;
+                      &lt;android.widget.RadioButton index="0" package="com.agence3pp" class="android.widget.RadioButton" text="Full test" resource-id="com.agence3pp:id/id_test_scenario_full" checkable="true" checked="true" clickable="true" enabled="true" focusable="true" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[34,326][284,580]" displayed="true" /&gt;
+                      &lt;android.widget.RadioButton index="1" package="com.agence3pp" class="android.widget.RadioButton" text="Speed test" resource-id="com.agence3pp:id/id_test_scenario_speed" checkable="true" checked="false" clickable="true" enabled="true" focusable="true" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[287,326][538,580]" displayed="true" /&gt;
+                      &lt;android.widget.RadioButton index="2" package="com.agence3pp" class="android.widget.RadioButton" text="Drive test" resource-id="com.agence3pp:id/id_test_scenario_drive" checkable="true" checked="false" clickable="true" enabled="true" focusable="true" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[541,326][792,580]" displayed="true" /&gt;
+                      &lt;android.widget.RadioButton index="3" package="com.agence3pp" class="android.widget.RadioButton" text="Test reminder" resource-id="com.agence3pp:id/id_test_reminder" checkable="true" checked="false" clickable="true" enabled="true" focusable="true" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[795,326][1046,580]" displayed="true" /&gt;
+                    &lt;/android.widget.RadioGroup&gt;
+                  &lt;/android.widget.RelativeLayout&gt;
+                  &lt;android.widget.ImageButton index="2" package="com.agence3pp" class="android.widget.ImageButton" text="" content-desc="Here's an image or an icon" resource-id="com.agence3pp:id/id_launch_test_btn" checkable="false" checked="false" clickable="true" enabled="true" focusable="true" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[176,1584][905,2044]" displayed="true" /&gt;
+                  &lt;android.widget.ImageView index="3" package="com.agence3pp" class="android.widget.ImageView" text="" content-desc="Here's an image or an icon" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[270,1584][811,2044]" displayed="true" /&gt;
+                  &lt;android.widget.TextView index="4" package="com.agence3pp" class="android.widget.TextView" text="TEST" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[478,1780][602,1848]" displayed="true" /&gt;
+                &lt;/android.view.ViewGroup&gt;
+              &lt;/android.widget.FrameLayout&gt;
+              &lt;android.widget.FrameLayout index="2" package="com.agence3pp" class="android.widget.FrameLayout" text="" resource-id="com.agence3pp:id/id_home_bottom_navigation" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,2062][1080,2148]" displayed="true"&gt;
+                &lt;android.view.ViewGroup index="0" package="com.agence3pp" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,2062][1080,2148]" displayed="true"&gt;
+                  &lt;android.widget.FrameLayout index="0" package="com.agence3pp" class="android.widget.FrameLayout" text="" resource-id="com.agence3pp:id/navigation_1" checkable="false" checked="false" clickable="true" enabled="true" focusable="true" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,2062][216,2148]" displayed="true"&gt;
+                    &lt;android.widget.ImageView index="0" package="com.agence3pp" class="android.widget.ImageView" text="" resource-id="com.agence3pp:id/icon" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[67,2116][148,2148]" displayed="true" /&gt;
+                  &lt;/android.widget.FrameLayout&gt;
+                  &lt;android.widget.FrameLayout index="1" package="com.agence3pp" class="android.widget.FrameLayout" text="" resource-id="com.agence3pp:id/navigation_2" checkable="false" checked="false" clickable="true" enabled="true" focusable="true" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[216,2062][432,2148]" displayed="true"&gt;
+                    &lt;android.widget.ImageView index="0" package="com.agence3pp" class="android.widget.ImageView" text="" resource-id="com.agence3pp:id/icon" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[283,2116][364,2148]" displayed="true" /&gt;
+                  &lt;/android.widget.FrameLayout&gt;
+                  &lt;android.widget.FrameLayout index="2" package="com.agence3pp" class="android.widget.FrameLayout" text="" resource-id="com.agence3pp:id/navigation_3" checkable="false" checked="false" clickable="false" enabled="true" focusable="true" focused="false" long-clickable="false" password="false" scrollable="false" selected="true" bounds="[432,2062][648,2148]" displayed="true"&gt;
+                    &lt;android.widget.ImageView index="0" package="com.agence3pp" class="android.widget.ImageView" text="" resource-id="com.agence3pp:id/icon" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="true" bounds="[499,2116][580,2148]" displayed="true" /&gt;
+                  &lt;/android.widget.FrameLayout&gt;
+                  &lt;android.widget.FrameLayout index="3" package="com.agence3pp" class="android.widget.FrameLayout" text="" resource-id="com.agence3pp:id/navigation_4" checkable="false" checked="false" clickable="true" enabled="true" focusable="true" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[648,2062][864,2148]" displayed="true"&gt;
+                    &lt;android.widget.ImageView index="0" package="com.agence3pp" class="android.widget.ImageView" text="" resource-id="com.agence3pp:id/icon" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[715,2116][796,2148]" displayed="true" /&gt;
+                  &lt;/android.widget.FrameLayout&gt;
+                  &lt;android.widget.FrameLayout index="4" package="com.agence3pp" class="android.widget.FrameLayout" text="" resource-id="com.agence3pp:id/navigation_5" checkable="false" checked="false" clickable="true" enabled="true" focusable="true" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[864,2062][1080,2148]" displayed="true"&gt;
+                    &lt;android.widget.ImageView index="0" package="com.agence3pp" class="android.widget.ImageView" text="" resource-id="com.agence3pp:id/icon" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[931,2116][1012,2148]" displayed="true" /&gt;
+                  &lt;/android.widget.FrameLayout&gt;
+                &lt;/android.view.ViewGroup&gt;
+              &lt;/android.widget.FrameLayout&gt;
+            &lt;/android.view.ViewGroup&gt;
+          &lt;/android.widget.FrameLayout&gt;
+        &lt;/android.widget.LinearLayout&gt;
+      &lt;/android.widget.FrameLayout&gt;
+    &lt;/android.widget.LinearLayout&gt;
+  &lt;/android.widget.FrameLayout&gt;
+&lt;/hierarchy&gt;
+tree
+&lt;Element hierarchy at 0x1198cdec0&gt;
+element
+[&lt;Element android.widget.RadioButton at 0x10f37dc80&gt;]</msg>
+<msg time="2024-09-13T11:24:00.607029" level="INFO">${result} = {'index': '1', 'package': 'com.agence3pp', 'class': 'android.widget.RadioButton', 'text': 'Speed test', 'resource-id': 'com.agence3pp:id/id_test_scenario_speed', 'checkable': 'true', 'checked': 'false...</msg>
+<var>${result}</var>
+<arg>text=${text}</arg>
+<doc>Find an element by its partial text in the page source and retrieve its attributes.</doc>
+<status status="PASS" start="2024-09-13T11:23:59.537592" elapsed="1.069531"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-09-13T11:24:00.607806" level="INFO">{'index': '1', 'package': 'com.agence3pp', 'class': 'android.widget.RadioButton', 'text': 'Speed test', 'resource-id': 'com.agence3pp:id/id_test_scenario_speed', 'checkable': 'true', 'checked': 'false', 'clickable': 'true', 'enabled': 'true', 'focusable': 'true', 'focused': 'false', 'long-clickable': 'false', 'password': 'false', 'scrollable': 'false', 'selected': 'false', 'bounds': '[287,326][538,580]', 'displayed': 'true'}</msg>
+<arg>${result}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-09-13T11:24:00.607397" elapsed="0.000502"/>
+</kw>
+<kw name="Tap Element By Attributes" owner="AppiumHelper">
+<msg time="2024-09-13T11:24:01.043103" level="INFO">Failed to tap element by XPath: 'WebDriver' object has no attribute 'find_element_by_xpath'
+Tapped element by coordinates: (412, 453)</msg>
+<arg>attributes=${result}</arg>
+<doc>Tap on an element using the attributes derived from the element.</doc>
+<status status="PASS" start="2024-09-13T11:24:00.608122" elapsed="0.435091"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-09-13T11:24:03.044540" level="INFO">Slept 2 seconds.</msg>
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-09-13T11:24:01.043464" elapsed="2.001299"/>
+</kw>
+<arg>text=Speed</arg>
+<status status="PASS" start="2024-09-13T11:23:59.537115" elapsed="3.507892"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-09-13T11:24:06.046363" level="INFO">Slept 3 seconds.</msg>
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-09-13T11:24:03.045510" elapsed="3.001098"/>
+</kw>
+<kw name="Press Element" owner="appium">
+<kw name="Get Element Attributes By Text" owner="AppiumHelper">
+<msg time="2024-09-13T11:24:06.807688" level="INFO">page_source
+&lt;?xml version='1.0' encoding='UTF-8' standalone='yes' ?&gt;
+&lt;hierarchy index="0" class="hierarchy" rotation="0" width="1080" height="2148"&gt;
+  &lt;android.widget.FrameLayout index="0" package="com.agence3pp" class="android.widget.FrameLayout" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,0][1080,2148]" displayed="true"&gt;
+    &lt;android.widget.LinearLayout index="0" package="com.agence3pp" class="android.widget.LinearLayout" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,0][1080,2148]" displayed="true"&gt;
+      &lt;android.widget.FrameLayout index="0" package="com.agence3pp" class="android.widget.FrameLayout" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,103][1080,2148]" displayed="true"&gt;
+        &lt;android.widget.LinearLayout index="0" package="com.agence3pp" class="android.widget.LinearLayout" text="" resource-id="com.agence3pp:id/action_bar_root" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,103][1080,2148]" displayed="true"&gt;
+          &lt;android.widget.FrameLayout index="0" package="com.agence3pp" class="android.widget.FrameLayout" text="" resource-id="android:id/content" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,103][1080,2148]" displayed="true"&gt;
+            &lt;android.view.ViewGroup index="0" package="com.agence3pp" class="android.view.ViewGroup" text="" resource-id="com.agence3pp:id/container" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,103][1080,2148]" displayed="true"&gt;
+              &lt;android.widget.LinearLayout index="0" package="com.agence3pp" class="android.widget.LinearLayout" text="" resource-id="com.agence3pp:id/activity_bottom_home_toolbar" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,103][1080,292]" displayed="true"&gt;
+                &lt;android.view.ViewGroup index="0" package="com.agence3pp" class="android.view.ViewGroup" text="" resource-id="com.agence3pp:id/inc_toolbar_with_center_logo_toolbar" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,103][1080,292]" displayed="true"&gt;
+                  &lt;android.widget.ImageView index="0" package="com.agence3pp" class="android.widget.ImageView" text="" content-desc="Logo" resource-id="com.agence3pp:id/inc_toolbar_with_center_logo_image" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[301,131][780,263]" displayed="true" /&gt;
+                &lt;/android.view.ViewGroup&gt;
+              &lt;/android.widget.LinearLayout&gt;
+              &lt;android.widget.FrameLayout index="1" package="com.agence3pp" class="android.widget.FrameLayout" text="" resource-id="com.agence3pp:id/id_home_navigation_content" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,292][1080,2062]" displayed="true"&gt;
+                &lt;android.view.ViewGroup index="0" package="com.agence3pp" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,292][1080,2062]" displayed="true"&gt;
+                  &lt;android.widget.FrameLayout index="0" package="com.agence3pp" class="android.widget.FrameLayout" text="" resource-id="com.agence3pp:id/id_google_map_container" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,292][1080,2062]" displayed="true"&gt;
+                    &lt;android.widget.FrameLayout index="0" package="com.agence3pp" class="android.widget.FrameLayout" text="" checkable="false" checked="false" clickable="true" enabled="true" focusable="true" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,292][1080,2062]" displayed="true"&gt;
+                      &lt;android.widget.FrameLayout index="0" package="com.agence3pp" class="android.widget.FrameLayout" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,292][1080,2062]" displayed="true"&gt;
+                        &lt;android.view.View index="0" package="com.agence3pp" class="android.view.View" text="" content-desc="Google Map" checkable="false" checked="false" clickable="true" enabled="true" focusable="true" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,292][1080,2062]" displayed="true"&gt;
+                          &lt;android.view.View index="0" package="com.agence3pp" class="android.view.View" text="" content-desc="Map Marker" checkable="false" checked="false" clickable="false" enabled="true" focusable="true" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[491,1042][589,1177]" displayed="true" /&gt;
+                        &lt;/android.view.View&gt;
+                        &lt;android.widget.RelativeLayout index="1" package="com.agence3pp" class="android.widget.RelativeLayout" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,292][1080,2062]" displayed="true" /&gt;
+                        &lt;android.widget.RelativeLayout index="2" package="com.agence3pp" class="android.widget.RelativeLayout" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,292][1080,2062]" displayed="true"&gt;
+                          &lt;android.widget.ImageView index="0" package="com.agence3pp" class="android.widget.ImageView" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[17,1971][220,2045]" displayed="true" /&gt;
+                        &lt;/android.widget.RelativeLayout&gt;
+                      &lt;/android.widget.FrameLayout&gt;
+                    &lt;/android.widget.FrameLayout&gt;
+                  &lt;/android.widget.FrameLayout&gt;
+                  &lt;android.widget.RelativeLayout index="1" package="com.agence3pp" class="android.widget.RelativeLayout" text="" resource-id="com.agence3pp:id/container_radio_group" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,292][1080,614]" displayed="true"&gt;
+                    &lt;android.widget.RadioGroup index="0" package="com.agence3pp" class="android.widget.RadioGroup" text="" resource-id="com.agence3pp:id/test_buttons_layout_with_reminder" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[34,326][1046,580]" displayed="true"&gt;
+                      &lt;android.widget.RadioButton index="0" package="com.agence3pp" class="android.widget.RadioButton" text="Full test" resource-id="com.agence3pp:id/id_test_scenario_full" checkable="true" checked="false" clickable="true" enabled="true" focusable="true" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[34,326][284,580]" displayed="true" /&gt;
+                      &lt;android.widget.RadioButton index="1" package="com.agence3pp" class="android.widget.RadioButton" text="Speed test" resource-id="com.agence3pp:id/id_test_scenario_speed" checkable="true" checked="true" clickable="true" enabled="true" focusable="true" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[287,326][538,580]" displayed="true" /&gt;
+                      &lt;android.widget.RadioButton index="2" package="com.agence3pp" class="android.widget.RadioButton" text="Drive test" resource-id="com.agence3pp:id/id_test_scenario_drive" checkable="true" checked="false" clickable="true" enabled="true" focusable="true" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[541,326][792,580]" displayed="true" /&gt;
+                      &lt;android.widget.RadioButton index="3" package="com.agence3pp" class="android.widget.RadioButton" text="Test reminder" resource-id="com.agence3pp:id/id_test_reminder" checkable="true" checked="false" clickable="true" enabled="true" focusable="true" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[795,326][1046,580]" displayed="true" /&gt;
+                    &lt;/android.widget.RadioGroup&gt;
+                  &lt;/android.widget.RelativeLayout&gt;
+                  &lt;android.widget.ImageButton index="2" package="com.agence3pp" class="android.widget.ImageButton" text="" content-desc="Here's an image or an icon" resource-id="com.agence3pp:id/id_launch_test_btn" checkable="false" checked="false" clickable="true" enabled="true" focusable="true" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[176,1584][905,2044]" displayed="true" /&gt;
+                  &lt;android.widget.ImageView index="3" package="com.agence3pp" class="android.widget.ImageView" text="" content-desc="Here's an image or an icon" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[270,1584][811,2044]" displayed="true" /&gt;
+                  &lt;android.widget.TextView index="4" package="com.agence3pp" class="android.widget.TextView" text="TEST" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[478,1780][602,1848]" displayed="true" /&gt;
+                &lt;/android.view.ViewGroup&gt;
+              &lt;/android.widget.FrameLayout&gt;
+              &lt;android.widget.FrameLayout index="2" package="com.agence3pp" class="android.widget.FrameLayout" text="" resource-id="com.agence3pp:id/id_home_bottom_navigation" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,2062][1080,2148]" displayed="true"&gt;
+                &lt;android.view.ViewGroup index="0" package="com.agence3pp" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,2062][1080,2148]" displayed="true"&gt;
+                  &lt;android.widget.FrameLayout index="0" package="com.agence3pp" class="android.widget.FrameLayout" text="" resource-id="com.agence3pp:id/navigation_1" checkable="false" checked="false" clickable="true" enabled="true" focusable="true" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,2062][216,2148]" displayed="true"&gt;
+                    &lt;android.widget.ImageView index="0" package="com.agence3pp" class="android.widget.ImageView" text="" resource-id="com.agence3pp:id/icon" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[67,2116][148,2148]" displayed="true" /&gt;
+                  &lt;/android.widget.FrameLayout&gt;
+                  &lt;android.widget.FrameLayout index="1" package="com.agence3pp" class="android.widget.FrameLayout" text="" resource-id="com.agence3pp:id/navigation_2" checkable="false" checked="false" clickable="true" enabled="true" focusable="true" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[216,2062][432,2148]" displayed="true"&gt;
+                    &lt;android.widget.ImageView index="0" package="com.agence3pp" class="android.widget.ImageView" text="" resource-id="com.agence3pp:id/icon" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[283,2116][364,2148]" displayed="true" /&gt;
+                  &lt;/android.widget.FrameLayout&gt;
+                  &lt;android.widget.FrameLayout index="2" package="com.agence3pp" class="android.widget.FrameLayout" text="" resource-id="com.agence3pp:id/navigation_3" checkable="false" checked="false" clickable="false" enabled="true" focusable="true" focused="false" long-clickable="false" password="false" scrollable="false" selected="true" bounds="[432,2062][648,2148]" displayed="true"&gt;
+                    &lt;android.widget.ImageView index="0" package="com.agence3pp" class="android.widget.ImageView" text="" resource-id="com.agence3pp:id/icon" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="true" bounds="[499,2116][580,2148]" displayed="true" /&gt;
+                  &lt;/android.widget.FrameLayout&gt;
+                  &lt;android.widget.FrameLayout index="3" package="com.agence3pp" class="android.widget.FrameLayout" text="" resource-id="com.agence3pp:id/navigation_4" checkable="false" checked="false" clickable="true" enabled="true" focusable="true" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[648,2062][864,2148]" displayed="true"&gt;
+                    &lt;android.widget.ImageView index="0" package="com.agence3pp" class="android.widget.ImageView" text="" resource-id="com.agence3pp:id/icon" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[715,2116][796,2148]" displayed="true" /&gt;
+                  &lt;/android.widget.FrameLayout&gt;
+                  &lt;android.widget.FrameLayout index="4" package="com.agence3pp" class="android.widget.FrameLayout" text="" resource-id="com.agence3pp:id/navigation_5" checkable="false" checked="false" clickable="true" enabled="true" focusable="true" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[864,2062][1080,2148]" displayed="true"&gt;
+                    &lt;android.widget.ImageView index="0" package="com.agence3pp" class="android.widget.ImageView" text="" resource-id="com.agence3pp:id/icon" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[931,2116][1012,2148]" displayed="true" /&gt;
+                  &lt;/android.widget.FrameLayout&gt;
+                &lt;/android.view.ViewGroup&gt;
+              &lt;/android.widget.FrameLayout&gt;
+            &lt;/android.view.ViewGroup&gt;
+          &lt;/android.widget.FrameLayout&gt;
+        &lt;/android.widget.LinearLayout&gt;
+      &lt;/android.widget.FrameLayout&gt;
+    &lt;/android.widget.LinearLayout&gt;
+  &lt;/android.widget.FrameLayout&gt;
+&lt;/hierarchy&gt;
+tree
+&lt;Element hierarchy at 0x11999a5c0&gt;
+element
+[&lt;Element android.widget.RadioGroup at 0x11999a2c0&gt;, &lt;Element android.widget.RadioButton at 0x11999a440&gt;]</msg>
+<msg time="2024-09-13T11:24:06.808382" level="INFO">${result} = {'index': '0', 'package': 'com.agence3pp', 'class': 'android.widget.RadioGroup', 'text': '', 'resource-id': 'com.agence3pp:id/test_buttons_layout_with_reminder', 'checkable': 'false', 'checked': 'fals...</msg>
+<var>${result}</var>
+<arg>text=${text}</arg>
+<doc>Find an element by its partial text in the page source and retrieve its attributes.</doc>
+<status status="PASS" start="2024-09-13T11:24:06.047931" elapsed="0.760506"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-09-13T11:24:06.809143" level="INFO">{'index': '0', 'package': 'com.agence3pp', 'class': 'android.widget.RadioGroup', 'text': '', 'resource-id': 'com.agence3pp:id/test_buttons_layout_with_reminder', 'checkable': 'false', 'checked': 'false', 'clickable': 'false', 'enabled': 'true', 'focusable': 'false', 'focused': 'false', 'long-clickable': 'false', 'password': 'false', 'scrollable': 'false', 'selected': 'false', 'bounds': '[34,326][1046,580]', 'displayed': 'true'}</msg>
+<arg>${result}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-09-13T11:24:06.808708" elapsed="0.000523"/>
+</kw>
+<kw name="Tap Element By Attributes" owner="AppiumHelper">
+<msg time="2024-09-13T11:24:07.267035" level="INFO">Failed to tap element by XPath: 'WebDriver' object has no attribute 'find_element_by_xpath'
+Tapped element by coordinates: (540, 453)</msg>
+<arg>attributes=${result}</arg>
+<doc>Tap on an element using the attributes derived from the element.</doc>
+<status status="PASS" start="2024-09-13T11:24:06.809446" elapsed="0.457724"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-09-13T11:24:09.268312" level="INFO">Slept 2 seconds.</msg>
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-09-13T11:24:07.267476" elapsed="2.001077"/>
+</kw>
+<arg>text=_reminder</arg>
+<status status="PASS" start="2024-09-13T11:24:06.047331" elapsed="3.221559"/>
+</kw>
+<status status="PASS" start="2024-09-13T11:23:31.493785" elapsed="37.775578"/>
+</test>
+<status status="PASS" start="2024-09-13T11:23:30.914424" elapsed="38.355682"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Framework Test Cases">Framework Test Cases</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2024-09-13T11:23:30.970527" level="WARN">Error in file '/Users/lalitanand/Desktop/icici-scripts-optics-framework/Resources/appium.robot' on line 174: The '[Return]' setting is deprecated. Use the 'RETURN' statement instead.</msg>
+</errors>
+</robot>

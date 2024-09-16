@@ -1,0 +1,3 @@
+opencv-python
+robotframework-appiumlibrary==2.1.0
+lxml
